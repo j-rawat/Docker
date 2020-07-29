@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ConnectVToVirtuosoWebService" targetNamespace="http://webservice.virtuoso.ventana.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.virtuoso.ventana.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice.virtuoso.ventana.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="addCase" type="tns:addCase"/>
+      <xs:element name="addCaseResponse" type="tns:addCaseResponse"/>
+      <xs:element name="addSlide" type="tns:addSlide"/>
+      <xs:element name="addSlideResponse" type="tns:addSlideResponse"/>
+      <xs:element name="addSpecimen" type="tns:addSpecimen"/>
+      <xs:element name="addSpecimenResponse" type="tns:addSpecimenResponse"/>
+      <xs:element name="addUser" type="tns:addUser"/>
+      <xs:element name="addUserResponse" type="tns:addUserResponse"/>
+      <xs:element name="addendCase" type="tns:addendCase"/>
+      <xs:element name="addendCaseResponse" type="tns:addendCaseResponse"/>
+      <xs:element name="amendCase" type="tns:amendCase"/>
+      <xs:element name="amendCaseResponse" type="tns:amendCaseResponse"/>
+      <xs:element name="cancelCase" type="tns:cancelCase"/>
+      <xs:element name="cancelCaseResponse" type="tns:cancelCaseResponse"/>
+      <xs:element name="deleteCase" type="tns:deleteCase"/>
+      <xs:element name="deleteCaseResponse" type="tns:deleteCaseResponse"/>
+      <xs:element name="deleteSlide" type="tns:deleteSlide"/>
+      <xs:element name="deleteSlideResponse" type="tns:deleteSlideResponse"/>
+      <xs:element name="deleteSpecimen" type="tns:deleteSpecimen"/>
+      <xs:element name="deleteSpecimenResponse" type="tns:deleteSpecimenResponse"/>
+      <xs:element name="signoutCase" type="tns:signoutCase"/>
+      <xs:element name="signoutCaseResponse" type="tns:signoutCaseResponse"/>
+      <xs:element name="updateCase" type="tns:updateCase"/>
+      <xs:element name="updateCaseResponse" type="tns:updateCaseResponse"/>
+      <xs:element name="updateClient" type="tns:updateClient"/>
+      <xs:element name="updateClientResponse" type="tns:updateClientResponse"/>
+      <xs:element name="updatePatient" type="tns:updatePatient"/>
+      <xs:element name="updatePatientResponse" type="tns:updatePatientResponse"/>
+      <xs:element name="updatePhysician" type="tns:updatePhysician"/>
+      <xs:element name="updatePhysicianResponse" type="tns:updatePhysicianResponse"/>
+      <xs:element name="updateSlide" type="tns:updateSlide"/>
+      <xs:element name="updateSlideResponse" type="tns:updateSlideResponse"/>
+      <xs:element name="updateSpecimen" type="tns:updateSpecimen"/>
+      <xs:element name="updateSpecimenResponse" type="tns:updateSpecimenResponse"/>
+      <xs:element name="updateUser" type="tns:updateUser"/>
+      <xs:element name="updateUserResponse" type="tns:updateUserResponse"/>
+      <xs:complexType name="cancelCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errorCode" type="xs:int"/>
+          <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+          <xs:element name="succeed" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signoutCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="signoutCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSpecimen">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:specimen"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="specimen">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessionNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="allSlides" nillable="true" type="tns:slide"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="externalSpecimenId" type="xs:string"/>
+          <xs:element minOccurs="0" name="grossDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="specimenBarcode" type="xs:string"/>
+          <xs:element minOccurs="0" name="specimenCollectedDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="specimenNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="specimenReceivedDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="surgicalProcedure" type="xs:string"/>
+          <xs:element minOccurs="0" name="tissueType" type="xs:string"/>
+          <xs:element minOccurs="0" name="tissueTypeDesc" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="slide">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessionNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="blockBarcode" type="xs:string"/>
+          <xs:element minOccurs="0" name="blockNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="cloneType" type="xs:string"/>
+          <xs:element minOccurs="0" name="comments" type="xs:string"/>
+          <xs:element minOccurs="0" name="controlType" type="xs:string"/>
+          <xs:element minOccurs="0" name="externalBlockId" type="xs:string"/>
+          <xs:element minOccurs="0" name="externalSlideId" type="xs:string"/>
+          <xs:element minOccurs="0" name="labelId" type="xs:string"/>
+          <xs:element minOccurs="0" name="scoringType" type="xs:string"/>
+          <xs:element minOccurs="0" name="slideNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="specimenNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="tissueTest" type="xs:string"/>
+          <xs:element minOccurs="0" name="tissueTestDesc" type="xs:string"/>
+          <xs:element minOccurs="0" name="vendor" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSpecimenResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:user"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="user">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="client" type="tns:client"/>
+          <xs:element minOccurs="0" name="contactInfo" type="tns:contactInfo"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+          <xs:element minOccurs="0" name="site" type="xs:string"/>
+          <xs:element minOccurs="0" name="suffix" type="xs:string"/>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element minOccurs="0" name="userRole" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="client">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="clientId" type="xs:string"/>
+          <xs:element minOccurs="0" name="clientName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="contactInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address1" type="xs:string"/>
+          <xs:element minOccurs="0" name="address2" type="xs:string"/>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="country" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="homeTel" type="xs:string"/>
+          <xs:element minOccurs="0" name="mobileTel" type="xs:string"/>
+          <xs:element minOccurs="0" name="state" type="xs:string"/>
+          <xs:element minOccurs="0" name="workTel" type="xs:string"/>
+          <xs:element minOccurs="0" name="zip" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="amendCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="amendCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateClient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:client"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateClientResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:user"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateUserResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updatePhysician">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:physician"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="physician">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactInfo" type="tns:contactInfo"/>
+          <xs:element minOccurs="0" name="externalPhysicianId" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="suffix" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updatePhysicianResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:case"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="case">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accessionNumber" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="allSpecimens" nillable="true" type="tns:specimen"/>
+          <xs:element minOccurs="0" name="assignedPathologist" type="tns:user"/>
+          <xs:element minOccurs="0" name="caseTags" type="xs:string"/>
+          <xs:element minOccurs="0" name="client" type="tns:client"/>
+          <xs:element minOccurs="0" name="externalCaseId" type="xs:string"/>
+          <xs:element name="markedUrgent" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="patientDetails" type="tns:patient"/>
+          <xs:element minOccurs="0" name="referringPhysician" type="tns:physician"/>
+          <xs:element minOccurs="0" name="site" type="xs:string"/>
+          <xs:element minOccurs="0" name="siteDesc" type="xs:string"/>
+          <xs:element minOccurs="0" name="tissueType" type="xs:string"/>
+          <xs:element minOccurs="0" name="workflow" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="patient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactInfo" type="tns:contactInfo"/>
+          <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="externalPatientId" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="gender" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="medicalHistory" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="suffix" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateSlide">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:slide"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateSlideResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateSpecimen">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:specimen"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateSpecimenResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteSlide">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:slide"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteSlideResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:case"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteSpecimen">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteSpecimenResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updatePatient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:patient"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updatePatientResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSlide">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:slide"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSlideResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addendCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addendCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteCase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteCaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:response"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="cancelCase">
+    <wsdl:part element="tns:cancelCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addSpecimen">
+    <wsdl:part element="tns:addSpecimen" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateClientResponse">
+    <wsdl:part element="tns:updateClientResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addUser">
+    <wsdl:part element="tns:addUser" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="amendCase">
+    <wsdl:part element="tns:amendCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateClient">
+    <wsdl:part element="tns:updateClient" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateSpecimenResponse">
+    <wsdl:part element="tns:updateSpecimenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCase">
+    <wsdl:part element="tns:updateCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateSlide">
+    <wsdl:part element="tns:updateSlide" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateSpecimen">
+    <wsdl:part element="tns:updateSpecimen" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteSpecimen">
+    <wsdl:part element="tns:deleteSpecimen" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updatePatient">
+    <wsdl:part element="tns:updatePatient" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addendCaseResponse">
+    <wsdl:part element="tns:addendCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="amendCaseResponse">
+    <wsdl:part element="tns:amendCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="signoutCaseResponse">
+    <wsdl:part element="tns:signoutCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addendCase">
+    <wsdl:part element="tns:addendCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteSlideResponse">
+    <wsdl:part element="tns:deleteSlideResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCaseResponse">
+    <wsdl:part element="tns:deleteCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addUserResponse">
+    <wsdl:part element="tns:addUserResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateUserResponse">
+    <wsdl:part element="tns:updateUserResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updatePatientResponse">
+    <wsdl:part element="tns:updatePatientResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCase">
+    <wsdl:part element="tns:deleteCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addSpecimenResponse">
+    <wsdl:part element="tns:addSpecimenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cancelCaseResponse">
+    <wsdl:part element="tns:cancelCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="signoutCase">
+    <wsdl:part element="tns:signoutCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateUser">
+    <wsdl:part element="tns:updateUser" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addSlideResponse">
+    <wsdl:part element="tns:addSlideResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updatePhysician">
+    <wsdl:part element="tns:updatePhysician" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteSpecimenResponse">
+    <wsdl:part element="tns:deleteSpecimenResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateSlideResponse">
+    <wsdl:part element="tns:updateSlideResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteSlide">
+    <wsdl:part element="tns:deleteSlide" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addCase">
+    <wsdl:part element="tns:addCase" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updatePhysicianResponse">
+    <wsdl:part element="tns:updatePhysicianResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateCaseResponse">
+    <wsdl:part element="tns:updateCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addCaseResponse">
+    <wsdl:part element="tns:addCaseResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="addSlide">
+    <wsdl:part element="tns:addSlide" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ConnectVToVirtuosoWebService">
+    <wsdl:operation name="cancelCase">
+      <wsdl:input message="tns:cancelCase" name="cancelCase"/>
+      <wsdl:output message="tns:cancelCaseResponse" name="cancelCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="signoutCase">
+      <wsdl:input message="tns:signoutCase" name="signoutCase"/>
+      <wsdl:output message="tns:signoutCaseResponse" name="signoutCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addSpecimen">
+      <wsdl:input message="tns:addSpecimen" name="addSpecimen"/>
+      <wsdl:output message="tns:addSpecimenResponse" name="addSpecimenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input message="tns:addUser" name="addUser"/>
+      <wsdl:output message="tns:addUserResponse" name="addUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="amendCase">
+      <wsdl:input message="tns:amendCase" name="amendCase"/>
+      <wsdl:output message="tns:amendCaseResponse" name="amendCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClient" name="updateClient"/>
+      <wsdl:output message="tns:updateClientResponse" name="updateClientResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <wsdl:input message="tns:updateUser" name="updateUser"/>
+      <wsdl:output message="tns:updateUserResponse" name="updateUserResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updatePhysician">
+      <wsdl:input message="tns:updatePhysician" name="updatePhysician"/>
+      <wsdl:output message="tns:updatePhysicianResponse" name="updatePhysicianResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateCase">
+      <wsdl:input message="tns:updateCase" name="updateCase"/>
+      <wsdl:output message="tns:updateCaseResponse" name="updateCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateSlide">
+      <wsdl:input message="tns:updateSlide" name="updateSlide"/>
+      <wsdl:output message="tns:updateSlideResponse" name="updateSlideResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateSpecimen">
+      <wsdl:input message="tns:updateSpecimen" name="updateSpecimen"/>
+      <wsdl:output message="tns:updateSpecimenResponse" name="updateSpecimenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSlide">
+      <wsdl:input message="tns:deleteSlide" name="deleteSlide"/>
+      <wsdl:output message="tns:deleteSlideResponse" name="deleteSlideResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addCase">
+      <wsdl:input message="tns:addCase" name="addCase"/>
+      <wsdl:output message="tns:addCaseResponse" name="addCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpecimen">
+      <wsdl:input message="tns:deleteSpecimen" name="deleteSpecimen"/>
+      <wsdl:output message="tns:deleteSpecimenResponse" name="deleteSpecimenResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updatePatient">
+      <wsdl:input message="tns:updatePatient" name="updatePatient"/>
+      <wsdl:output message="tns:updatePatientResponse" name="updatePatientResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addSlide">
+      <wsdl:input message="tns:addSlide" name="addSlide"/>
+      <wsdl:output message="tns:addSlideResponse" name="addSlideResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addendCase">
+      <wsdl:input message="tns:addendCase" name="addendCase"/>
+      <wsdl:output message="tns:addendCaseResponse" name="addendCaseResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCase">
+      <wsdl:input message="tns:deleteCase" name="deleteCase"/>
+      <wsdl:output message="tns:deleteCaseResponse" name="deleteCaseResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConnectVToVirtuosoWebServiceSoapBinding" type="tns:ConnectVToVirtuosoWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cancelCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cancelCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signoutCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="signoutCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="signoutCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSpecimen">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addSpecimen">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addSpecimenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="amendCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="amendCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="amendCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateClient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateClientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePhysician">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updatePhysician">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePhysicianResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSlide">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateSlide">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSlideResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSpecimen">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateSpecimen">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateSpecimenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSlide">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteSlide">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSlideResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSpecimen">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteSpecimen">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteSpecimenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePatient">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updatePatient">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePatientResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSlide">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addSlide">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addSlideResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addendCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addendCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addendCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCase">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteCase">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteCaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConnectVToVirtuosoWebService">
+    <wsdl:port binding="tns:ConnectVToVirtuosoWebServiceSoapBinding" name="ConnectVToVirtuosoWebService">
+      <soap:address location="http://WIN-GT0TJ9NSANT:80/uPath-services/ConnectVToVirtuosoWebService/ConnectVToVirtuosoWebServiceImpl"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
