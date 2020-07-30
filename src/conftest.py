@@ -1,5 +1,6 @@
 from pytest import fixture
-from .config import Config
+from config import Config
+#from .config import Config
 
 import os
 import sys
