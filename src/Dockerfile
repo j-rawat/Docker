@@ -12,4 +12,4 @@ COPY . ./
 WORKDIR test
 
 #run the app
-CMD ["pytest"]
+CMD ["pytest", "-s","-v","-m", "sanity"]
