@@ -1,11 +1,30 @@
-import pytest
+
 import logging
+#from .utils import helper
+import pytest
+
+
+
+# @pytest.fixture(scope='function')
+# def get_wsdl(endpointExtractor):
+#     endpoint = endpointExtractor.get_endpoint_info()
+#     return endpoint
+#
+#
+# @pytest.fixture()
+# def setup(request):
+#     print("********************************" + request.node.name + " started running ********************************")
+#     yield
+#     print("********************************" + request.node.name + " completed running *******************************")
 
 
 @pytest.mark.sanity
-def test_method11():
-    logging.info('This is first step')
-    assert 2 == 2
+def _readingXML(setup, helper):
+    logging.info('I am reading XML')
+    payload = helper.getPayload('addcase.xml', 'accessionNumber', 'blockBarcode', 'labelId', 'specimenBarcode')
+    print(payload)
+    accessionNumber = helper.get_tag_text(payload, 'accessionNumber')
+    print(accessionNumber)
 
 
 @pytest.mark.regression

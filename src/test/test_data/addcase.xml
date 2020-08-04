@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case>
+   <accessionNumber>UID497478</accessionNumber>
+   <allSpecimens>
+      <accessionNumber>UID497478</accessionNumber>
+      <allSlides>
+         <accessionNumber>UID497478</accessionNumber>
+         <blockBarcode>UID497478;1;A</blockBarcode>
+         <blockNumber>A</blockNumber>
+         <cloneType>SP1</cloneType>
+         <comments>S1 Comments</comments>
+         <controlType>None</controlType>
+         <externalBlockId>TCB-A</externalBlockId>
+         <externalSlideId>TCS-01</externalSlideId>
+         <labelId>UID497478;1;A;S1</labelId>
+         <scoringType>Percent_Positivity</scoringType>
+         <slideNumber>1</slideNumber>
+         <specimenNumber>1</specimenNumber>
+         <tissueTest>ER</tissueTest>
+         <tissueTestDesc>Desc-ER</tissueTestDesc>
+         <vendor>Ventana</vendor>
+      </allSlides>
+      <externalSpecimenId>TCSP-1</externalSpecimenId>
+      <specimenBarcode>UID497478;1</specimenBarcode>
+      <specimenCollectedDate>2013-07-05T11:55:00</specimenCollectedDate>
+      <specimenNumber>1</specimenNumber>
+      <specimenReceivedDate>2013-07-05T11:55:00</specimenReceivedDate>
+      <surgicalProcedure>SP Name</surgicalProcedure>
+      <tissueType>Breast</tissueType>
+      <tissueTypeDesc>Desc-BreastType</tissueTypeDesc>
+   </allSpecimens>
+   <assignedPathologist>
+      <client>
+         <clientId>VMSI</clientId>
+      </client>
+      <contactInfo>
+         <email>Email@test.com</email>
+         <workTel>(408)128-8888</workTel>
+      </contactInfo>
+      <site>Roche</site>
+      <userId>path1</userId>
+      <userRole>Pathologist</userRole>
+   </assignedPathologist>
+   <client>
+      <clientId>VMSI</clientId>
+   </client>
+   <patientDetails>
+      <contactInfo>
+         <address1>Avenue 21</address1>
+         <city>MountainView</city>
+         <country>USA</country>
+         <email>EmailJanet@test.com</email>
+         <homeTel>(650)128-8888</homeTel>
+         <state>California</state>
+         <workTel>(477)128-8888</workTel>
+         <zip>465962</zip>
+      </contactInfo>
+      <dateOfBirth>1956-01-27T00:00:00</dateOfBirth>
+      <firstName>PatFN4343</firstName>
+      <gender>F</gender>
+      <lastName>PatLN4343</lastName>
+   </patientDetails>
+   <referringPhysician>
+      <externalPhysicianId>phy001</externalPhysicianId>
+      <firstName>Cobie</firstName>
+      <lastName>Smulders</lastName>
+      <middleName>J</middleName>
+      <suffix>MD</suffix>
+   </referringPhysician>
+   <site>Roche</site>
+   <tissueType>Breast</tissueType>
+   <workflow>INTEGRATED_TREATINGMD</workflow>
+</case>
