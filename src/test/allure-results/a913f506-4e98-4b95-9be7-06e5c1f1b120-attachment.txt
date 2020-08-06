@@ -1,0 +1,1 @@
+[32mINFO    [0m root:test_one.py:13 I am reading XML

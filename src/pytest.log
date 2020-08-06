@@ -1,2 +1,2 @@
-INFO     root:test_one.py:25 This is first step
-INFO     root:test_three.py:23 This is first step
+INFO     root:test_one.py:13 I am reading XML
+INFO     root:test_three.py:23 I am reading XML

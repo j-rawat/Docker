@@ -30,28 +30,28 @@ def setup(request):
     print("********************************" + request.node.name + " completed running *******************************")
 
 
-@pytest.fixture(scope="function")
-def tc_logger(request):
-    # logger_for_classes = logging.getLogger('smoke.Classes')  # TODO: fix to relative path
-    logger_for_testcases = logging.getLogger(request.function.__name__)
-    # logger_for_classes.setLevel(logging.INFO)
-    logger_for_testcases.setLevel(logging.INFO)
-
-    # create file handler
-    handler = logging.FileHandler('./Logs/TestCaseLogs/{}.log'.format(request.function.__name__), 'w+')
-    handler.setLevel(logging.INFO)
-
-    # create a logging format
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    handler.setFormatter(formatter)
-
-    # add the file handler to the logger
-    # logger_for_classes.addHandler(handler)
-    logger_for_testcases.addHandler(handler)
-    yield logger_for_testcases
-    handler.close()
-    # logger_for_classes.removeHandler(handler)
-    logger_for_testcases.removeHandler(handler)
+# @pytest.fixture(scope="function")
+# def tc_logger(request):
+#     # logger_for_classes = logging.getLogger('smoke.Classes')  # TODO: fix to relative path
+#     logger_for_testcases = logging.getLogger(request.function.__name__)
+#     # logger_for_classes.setLevel(logging.INFO)
+#     logger_for_testcases.setLevel(logging.INFO)
+#
+#     # create file handler
+#     handler = logging.FileHandler('./Logs/TestCaseLogs/{}.log'.format(request.function.__name__), 'w+')
+#     handler.setLevel(logging.INFO)
+#
+#     # create a logging format
+#     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+#     handler.setFormatter(formatter)
+#
+#     # add the file handler to the logger
+#     # logger_for_classes.addHandler(handler)
+#     logger_for_testcases.addHandler(handler)
+#     yield logger_for_testcases
+#     handler.close()
+#     # logger_for_classes.removeHandler(handler)
+#     logger_for_testcases.removeHandler(handler)
 
 
 class AllureLoggingHandler(logging.Handler):

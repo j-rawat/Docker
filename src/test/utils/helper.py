@@ -19,6 +19,7 @@ class Helper:
 
     def getPayload(self, file_name, *args):
         full_file = os.path.abspath(os.path.join('test_data', file_name))
+
         print(full_file)
 
         tree = ET.parse(full_file)

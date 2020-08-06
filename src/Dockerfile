@@ -12,4 +12,4 @@ COPY . ./
 WORKDIR test
 
 #run the app
-CMD ["pytest", "-s","-v","-m", "sanity", "--env","qa"]
+CMD ["pytest", "-s","-v","-m", "sanity", "--env","qa","--alluredir=", "./allure-results"]

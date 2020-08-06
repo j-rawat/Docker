@@ -19,10 +19,9 @@ import pytest
 
 
 @pytest.mark.sanity
-def _readingXML(setup, helper):
+def test_readingXML(setup, helper):
     logging.info('I am reading XML')
     payload = helper.getPayload('addcase.xml', 'accessionNumber', 'blockBarcode', 'labelId', 'specimenBarcode')
-    print(payload)
     accessionNumber = helper.get_tag_text(payload, 'accessionNumber')
     print(accessionNumber)
 
